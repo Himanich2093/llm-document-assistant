@@ -10,7 +10,7 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 import google.generativeai as genai
 
 load_dotenv()
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
 @st.cache_resource
 def process_pdf(uploaded_file):
